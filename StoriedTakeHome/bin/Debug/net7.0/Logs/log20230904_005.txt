@@ -1,0 +1,3 @@
+2023-09-04 18:05:14.417 -06:00 [INF] Should I fly south for the winter?
+2023-09-04 18:05:15.239 -06:00 [INF] Definitely not, I'm quite ok with cold
+2023-09-04 18:05:15.240 -06:00 [INF] And away we go

@@ -1,0 +1,2 @@
+2023-09-04 14:13:14.484 -06:00 [INF] Getting things a rockin'
+2023-09-04 14:13:14.510 -06:00 [INF] Creating databases directory F:\Repos\Homework\StoriedTakeHome\StoriedTakeHome\bin\Release\net7.0\publish\Databases
