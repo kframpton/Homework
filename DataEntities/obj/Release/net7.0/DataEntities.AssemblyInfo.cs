@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataEntities")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ca14a10185b1389795d1d0e50ff041b46231f73")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataEntities")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataEntities")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj": {}
+    "F:\\Repos\\Homework\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj": {}
   },
   "projects": {
-    "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj": {
+    "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj",
+        "projectUniqueName": "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj",
         "projectName": "DataEntities",
-        "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj",
+        "projectPath": "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\obj\\",
+        "outputPath": "F:\\Repos\\Homework\\DataEntities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -94,14 +94,14 @@
         }
       }
     },
-    "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj": {
+    "F:\\Repos\\Homework\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj",
+        "projectUniqueName": "F:\\Repos\\Homework\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj",
         "projectName": "StoriedTakeHomeUnit.Tests",
-        "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj",
+        "projectPath": "F:\\Repos\\Homework\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeUnit.Tests\\obj\\",
+        "outputPath": "F:\\Repos\\Homework\\StoriedTakeHomeUnit.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -124,11 +124,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj": {
-                "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj"
+              "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj": {
+                "projectPath": "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj"
               },
-              "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj": {
-                "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj"
+              "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj": {
+                "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj"
               }
             }
           }
@@ -187,14 +187,14 @@
         }
       }
     },
-    "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj": {
+    "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj",
+        "projectUniqueName": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj",
         "projectName": "StoriedTakeHomeWebApi",
-        "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj",
+        "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeWebApi.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHome\\obj\\",
+        "outputPath": "F:\\Repos\\Homework\\StoriedTakeHome\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -217,8 +217,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj": {
-                "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj"
+              "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj": {
+                "projectPath": "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj"
               }
             }
           }

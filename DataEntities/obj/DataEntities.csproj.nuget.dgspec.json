@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj": {}
+    "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj": {}
   },
   "projects": {
-    "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj": {
+    "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj",
+        "projectUniqueName": "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj",
         "projectName": "DataEntities",
-        "projectPath": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj",
+        "projectPath": "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\obj\\",
+        "outputPath": "F:\\Repos\\Homework\\DataEntities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

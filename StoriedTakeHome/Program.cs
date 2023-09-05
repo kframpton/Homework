@@ -60,6 +60,7 @@ try
     }
 
     Log.Information("And away we go");
+    Log.Information("Hosted Urls: {https} - {http}", "https://localhost:7096", "http://localhost:5114");
     app.Run();
 }
 catch (Exception ex) when (ex.GetType().Name != "HostAbortedException")

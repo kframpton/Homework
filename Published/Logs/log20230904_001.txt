@@ -1,0 +1,6 @@
+2023-09-04 18:56:36.217 -06:00 [INF] Should I fly south for the winter?
+2023-09-04 18:56:36.705 -06:00 [INF] Definitely not, I'm quite ok with cold
+2023-09-04 18:56:36.706 -06:00 [INF] And away we go
+2023-09-04 18:57:33.241 -06:00 [INF] Somebody wants to get to know everybody
+2023-09-04 18:57:33.274 -06:00 [INF] Getting every person entity there is
+2023-09-04 18:57:33.488 -06:00 [INF] People entities found!

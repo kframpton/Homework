@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ubQugL5TKF7XNY+1Aa50wNlG9yuGwmLVeaxIaO2jmTFF7ByWp8mXgo5AD6i11zJ6zLf4lb4ltGm7jkwtNcZGRg==",
+  "dgSpecHash": "1nqwupZWziOhMJwmxlK33xpDer+IbF8HPOhzL8UoITjpzUD6X6VPdlgl54HnSV14wrZalfvBesZO95pGDsXauA==",
   "success": true,
-  "projectFilePath": "F:\\Repos\\Homework\\StoriedTakeHome\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj",
+  "projectFilePath": "F:\\Repos\\Homework\\StoriedTakeHomeUnit.Tests\\StoriedTakeHomeUnit.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kevin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\kevin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

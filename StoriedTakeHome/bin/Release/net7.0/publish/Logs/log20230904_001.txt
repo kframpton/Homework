@@ -1,6 +1,0 @@
-2023-09-04 14:13:15.358 -06:00 [INF] Should I fly south for the winter?
-2023-09-04 14:13:15.976 -06:00 [INF] Why yes, yes I should
-2023-09-04 14:13:16.331 -06:00 [INF] Applying migration '20230904080520_InitialCreate'.
-2023-09-04 14:13:16.359 -06:00 [INF] Applying migration '20230904080600_HaveSomePeeps'.
-2023-09-04 14:13:16.370 -06:00 [INF] Applying migration '20230904085724_AddHistory'.
-2023-09-04 14:13:16.388 -06:00 [INF] And away we go

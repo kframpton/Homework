@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3oV3jMdD5iZ7d4hV0j8hoIykrdJwA/mfO0S/BmrmY8rRCerfx2OmhiIl+ngH0AgymweLlNiiWDw4nHFPVoMdUg==",
+  "dgSpecHash": "BKf6HoAwZA0+jOotHXSJcvD0HxPhegZEkeHvwAojZ0PnFTBATWQsq9F0IM51qyVAefjFy3r4QGYsDqflQ9lNdA==",
   "success": true,
-  "projectFilePath": "F:\\Repos\\Homework\\StoriedTakeHome\\DataEntities\\DataEntities.csproj",
+  "projectFilePath": "F:\\Repos\\Homework\\DataEntities\\DataEntities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kevin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\kevin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
