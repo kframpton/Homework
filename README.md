@@ -22,4 +22,3 @@ Database migrations will run on launch, but only if no migrations have yet been 
 
 ## Future Improvements
 - Add Api Versioning
-- Data driven dynamic versioning for Command and Query handlers
