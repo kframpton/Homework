@@ -1,19 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using StoriedTakeHomeWebApi.Interfaces.Commands;
-using StoriedTakeHomeWebApi.RequestModels;
-using StoriedTakeHomeWebApi.ResponseModels;
+﻿using DataEntities.Contexts;
+using Microsoft.AspNetCore.Mvc;
+using ModuleManager.Services;
+using PeopleCommandHandler.Interfaces;
+using PeopleCommandHandler.Models;
+using PeopleQueryHandler.Models;
 
 namespace StoriedTakeHomeWebApi.Controllers;
 [Route("[controller]")]
 [ApiController]
 public class DeathController : ControllerBase
 {
-    private readonly IPersonCommandHandler commandHandler;
+    private readonly IPeopleCommandHandlerConsole commandHandler;
     private readonly ILogger<PersonController> logger;
 
-    public DeathController(IPersonCommandHandler commandHandler, ILogger<PersonController> logger)
+    public DeathController(IModuleManagerService moduleManagerService, TardisContext tardisContext, IServiceProvider services, ILogger<PersonController> logger)
     {
-        this.commandHandler = commandHandler;
+        commandHandler = moduleManagerService.GetApi<IPeopleCommandHandlerConsole, PeopleCommandHandlerConsoleOptions>(o =>
+        {
+            o.Context = tardisContext;
+            o.Services = services;
+        }); 
+
         this.logger = logger;
     }
 

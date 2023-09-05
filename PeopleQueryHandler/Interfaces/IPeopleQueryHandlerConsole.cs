@@ -1,14 +1,14 @@
 ﻿using DataEntities.Entities.Tardis;
-using StoriedTakeHomeWebApi.ResponseModels;
+using ModuleSharedResources.Interfaces;
+using PeopleQueryHandler.Models;
 
-namespace StoriedTakeHomeWebApi.Interfaces.Queries;
-
-public interface IPersonQueryHandler
+namespace PeopleQueryHandler.Interfaces;
+public interface IPeopleQueryHandlerConsole : IManagedModule
 {
-    PersonResponseModel? GetPersonById(Guid id);
     List<PersonResponseModel> GetAllPeople();
     List<PersonResponseModel> GetAllPeople(Gender gender);
     List<PersonResponseModel> GetAllPeopleByGivenName(string givenName);
     List<PersonResponseModel> GetAllPeopleBySurname(string surname);
+    PersonResponseModel? GetPersonById(Guid id);
     List<PersonHistoryResponseModel> GetPersonHistory(Guid id);
 }

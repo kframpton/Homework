@@ -1,4 +1,4 @@
-﻿using StoriedTakeHomeWebApi.RequestModels;
+﻿using PeopleCommandHandler.Models;
 
 namespace StoriedTakeHomeUnit.Tests;
 public class RecordDeathRequestModelTests

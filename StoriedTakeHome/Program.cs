@@ -1,10 +1,8 @@
 using DataEntities.Contexts;
 using Microsoft.EntityFrameworkCore;
+using ModuleManager;
 using Serilog;
-using StoriedTakeHomeWebApi.Handlers.Commands;
-using StoriedTakeHomeWebApi.Handlers.Queries;
-using StoriedTakeHomeWebApi.Interfaces.Commands;
-using StoriedTakeHomeWebApi.Interfaces.Queries;
+
 
 Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 IConfiguration config = WebApplication.CreateBuilder().Configuration;
@@ -24,12 +22,11 @@ try
             .ReadFrom.Configuration(ctx.Configuration));
 
     builder.Services.AddDbContext<TardisContext>();
-    builder.Services.AddScoped<IPersonCommandHandler, PersonCommandHandler>();
-    builder.Services.AddScoped<IPersonQueryHandler, PersonQueryHandler>();
     builder.WebHost.UseUrls("https://localhost:7096", "http://localhost:5114");
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+    builder.AddModuleManager();
 
     var app = builder.Build();
 

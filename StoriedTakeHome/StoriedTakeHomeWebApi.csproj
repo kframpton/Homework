@@ -29,6 +29,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataEntities\DataEntities.csproj" />
+    <ProjectReference Include="..\ModuleManagerService\ModuleManagerService.csproj" />
+    <ProjectReference Include="..\PeopleCommandHandler\PeopleCommandHandler.csproj" />
+    <ProjectReference Include="..\PeopleQueryHandler\PeopleQueryHandler.csproj" />
   </ItemGroup>
 
 </Project>

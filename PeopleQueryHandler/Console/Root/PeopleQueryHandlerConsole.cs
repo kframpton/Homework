@@ -1,22 +1,17 @@
 ﻿using DataEntities.Contexts;
 using DataEntities.Entities.Tardis;
-using StoriedTakeHomeWebApi.Interfaces.Queries;
-using StoriedTakeHomeWebApi.ResponseModels;
+using Microsoft.Extensions.Logging;
+using ModuleSharedResources.Apis;
+using PeopleQueryHandler.Interfaces;
+using PeopleQueryHandler.Models;
 
-namespace StoriedTakeHomeWebApi.Handlers.Queries;
-
-public class PersonQueryHandler : IPersonQueryHandler
+namespace PeopleQueryHandler.Console.Root;
+public abstract partial class PeopleQueryHandlerConsole : ABaseConsole, IPeopleQueryHandlerConsole
 {
-    private readonly TardisContext context;
-    private readonly ILogger<PersonQueryHandler> logger;
+    protected TardisContext context;
+    protected ILogger<PeopleQueryHandlerConsole> logger;
 
-    public PersonQueryHandler(TardisContext context, ILogger<PersonQueryHandler> logger)
-    {
-        this.context = context;
-        this.logger = logger;
-    }
-
-    public PersonResponseModel? GetPersonById(Guid id)
+    public virtual PersonResponseModel? GetPersonById(Guid id)
     {
         logger.LogInformation("Getting person entity for id: {id}", id);
         Person? person = context.People.FirstOrDefault(c => c.Id == id);
@@ -34,7 +29,7 @@ public class PersonQueryHandler : IPersonQueryHandler
         }
     }
 
-    public List<PersonResponseModel> GetAllPeople()
+    public virtual List<PersonResponseModel> GetAllPeople()
     {
         List<PersonResponseModel> people = new();
         logger.LogInformation("Getting every person entity there is");
@@ -55,12 +50,12 @@ public class PersonQueryHandler : IPersonQueryHandler
         return people;
     }
 
-    public List<PersonResponseModel> GetAllPeople(Gender gender)
+    public virtual List<PersonResponseModel> GetAllPeople(Gender gender)
     {
         List<PersonResponseModel> people = new();
         logger.LogInformation("Getting every person entity of gender {gender} there is", gender);
         if (context.People.Any(c => c.Gender == gender))
-            foreach(Person person in context.People.Where(c => c.Gender == gender))
+            foreach (Person person in context.People.Where(c => c.Gender == gender))
                 people.Add(new(person));
 
         if (people.Count > 0)
@@ -76,7 +71,7 @@ public class PersonQueryHandler : IPersonQueryHandler
         return people;
     }
 
-    public List<PersonResponseModel> GetAllPeopleByGivenName(string givenName)
+    public virtual List<PersonResponseModel> GetAllPeopleByGivenName(string givenName)
     {
         List<PersonResponseModel> people = new();
         logger.LogInformation("Getting every person entity with given name of {givenName} we can find", givenName);
@@ -97,7 +92,7 @@ public class PersonQueryHandler : IPersonQueryHandler
         return people;
     }
 
-    public List<PersonResponseModel> GetAllPeopleBySurname(string surname)
+    public virtual List<PersonResponseModel> GetAllPeopleBySurname(string surname)
     {
         List<PersonResponseModel> people = new();
         logger.LogInformation("Getting every person entity with given name of {surname} we can find", surname);
@@ -116,27 +111,5 @@ public class PersonQueryHandler : IPersonQueryHandler
         }
 
         return people;
-    }
-
-    public List<PersonHistoryResponseModel> GetPersonHistory(Guid id)
-    {
-        List<PersonHistoryResponseModel> history = new();
-        logger.LogInformation("Getting historical person data for id: {id}", id);
-        
-        if (context.PeopleHistory.Any(c => c.PersonId ==  id))
-            foreach (PersonHistory personHistory in context.PeopleHistory.Where(c => c.PersonId == id).OrderByDescending(c => c.ArchiveDate))
-                history.Add(new(personHistory));
-
-        if (history.Count > 0)
-        {
-            logger.LogInformation("Historical person data found!");
-            logger.LogDebug("history: {@history}", history);
-        }
-        else
-        {
-            logger.LogInformation("No history found");
-        }
-
-        return history;
     }
 }

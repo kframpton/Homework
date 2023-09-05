@@ -1,21 +1,27 @@
-﻿using DataEntities.Entities.Tardis;
+﻿using DataEntities.Contexts;
+using DataEntities.Entities.Tardis;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Extensions;
-using StoriedTakeHomeWebApi.Interfaces.Queries;
+using ModuleManager.Services;
+using PeopleQueryHandler.Interfaces;
+using PeopleQueryHandler.Models;
 using StoriedTakeHomeWebApi.RequestModels;
-using StoriedTakeHomeWebApi.ResponseModels;
 
 namespace StoriedTakeHomeWebApi.Controllers;
 [Route("[controller]")]
 [ApiController]
 public class PeopleController : ControllerBase
 {
-    private readonly IPersonQueryHandler queryHandler;
+    private readonly IPeopleQueryHandlerConsole queryHandler;
     private readonly ILogger<PeopleController> logger;
 
-    public PeopleController(IPersonQueryHandler queryHandler, ILogger<PeopleController> logger)
+    public PeopleController(IModuleManagerService moduleManagerService, TardisContext tardisContext, IServiceProvider services, ILogger<PeopleController> logger)
     {
-        this.queryHandler = queryHandler;
+        queryHandler = moduleManagerService.GetApi<IPeopleQueryHandlerConsole, PeopleQueryHandlerConsoleOptions>(o =>
+        {
+            o.Context = tardisContext;
+            o.Services = services;
+        });
         this.logger = logger;
     }
 

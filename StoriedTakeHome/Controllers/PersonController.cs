@@ -1,22 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using StoriedTakeHomeWebApi.Interfaces.Commands;
-using StoriedTakeHomeWebApi.Interfaces.Queries;
-using StoriedTakeHomeWebApi.RequestModels;
-using StoriedTakeHomeWebApi.ResponseModels;
+﻿using DataEntities.Contexts;
+using Microsoft.AspNetCore.Mvc;
+using ModuleManager.Services;
+using PeopleCommandHandler.Interfaces;
+using PeopleCommandHandler.Models;
+using PeopleQueryHandler.Interfaces;
+using PeopleQueryHandler.Models;
 
 namespace StoriedTakeHomeWebApi.Controllers;
 [Route("[controller]")]
 [ApiController]
 public class PersonController : ControllerBase
 {
-    private readonly IPersonCommandHandler commandHandler;
-    private readonly IPersonQueryHandler queryHandler;
+    private readonly IPeopleCommandHandlerConsole commandHandler;
+    private readonly IPeopleQueryHandlerConsole queryHandler;
     private readonly ILogger<PersonController> logger;
 
-    public PersonController(IPersonCommandHandler commandHandler, IPersonQueryHandler queryHandler, ILogger<PersonController> logger)
+    public PersonController(IModuleManagerService moduleManagerService, TardisContext tardisContext, IServiceProvider services, ILogger<PersonController> logger)
     {
-        this.commandHandler = commandHandler;
-        this.queryHandler = queryHandler;
+        commandHandler = moduleManagerService.GetApi<IPeopleCommandHandlerConsole, PeopleCommandHandlerConsoleOptions>(o =>
+        {
+            o.Context = tardisContext;
+            o.Services = services;
+        });
+        queryHandler = moduleManagerService.GetApi<IPeopleQueryHandlerConsole, PeopleQueryHandlerConsoleOptions>(o =>
+        {
+            o.Context = tardisContext;
+            o.Services = services;
+        });
         this.logger = logger;
     }
 
@@ -44,7 +54,7 @@ public class PersonController : ControllerBase
 
         PersonResponseModel person = new(commandHandler.AddPerson(personRequest));
 
-        return Created($"http{(Request.IsHttps ? "s": "")}://{Request.Host}{Request.Path}", person);
+        return Created($"http{(Request.IsHttps ? "s" : "")}://{Request.Host}{Request.Path}", person);
     }
 
     [ProducesResponseType(typeof(PersonResponseModel), 200)]

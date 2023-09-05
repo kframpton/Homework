@@ -21,6 +21,7 @@ public class TardisContext : DbContext
         options.UseLoggerFactory(loggerFactory);
     }
 
+    public DbSet<Module> Modules { get; set; }
     public DbSet<Person> People { get; set; }
     public DbSet<PersonHistory> PeopleHistory { get; set; }
 

@@ -1,49 +1,16 @@
-﻿using DataEntities.Contexts;
-using DataEntities.Entities.Tardis;
-using StoriedTakeHomeWebApi.Interfaces.Commands;
-using StoriedTakeHomeWebApi.RequestModels;
+﻿using DataEntities.Entities.Tardis;
+using Microsoft.Extensions.Logging;
+using PeopleCommandHandler.Models;
 
-namespace StoriedTakeHomeWebApi.Handlers.Commands;
-
-public class PersonCommandHandler : IPersonCommandHandler
+namespace PeopleCommandHandler.Console.V1.R1;
+public class Console : R0.Console
 {
-    private readonly TardisContext context;
-    private readonly ILogger<PersonCommandHandler> logger;
+    public Console() { }
 
-    public PersonCommandHandler(TardisContext tardisContext, ILogger<PersonCommandHandler> logger)
-    {
-        context = tardisContext;
-        this.logger = logger;
-    }
+    public Console(Action<PeopleCommandHandlerConsoleOptions> action) : base(action) { }
 
-    public Person AddPerson(AddPersonRequestModel personRequest)
-    {
-        logger.LogInformation("Adding person entity");
-        logger.LogDebug("personRequest: {@personRequest}", personRequest);
-        if (!personRequest.Validate(out string error))
-            throw new AddPersonException($"Validation failed: {error}");
-
-        Person person = new()
-        {
-            Id = Guid.NewGuid(),
-            GivenName = personRequest.GivenName,
-            Surname = personRequest.Surname,
-            Gender = personRequest.Gender,
-            BirthDate = personRequest.BirthDate,
-            BirthLocation = personRequest.BirthLocation,
-            DeathDate = personRequest.DeathDate,
-            DeathLocation = personRequest.DeathLocation
-        };
-
-        context.People.Add(person);
-        context.SaveChanges();
-
-        context.PeopleHistory.Add(new(person));
-        context.SaveChanges();
-        return person;
-    }
-
-    public Person RecordBirth(RecordBirthRequestModel birthRequest)
+    //this is actually the same as version 1.0 but included for demo purposes
+    public override Person RecordBirth(RecordBirthRequestModel birthRequest)
     {
         logger.LogInformation("Recording birth");
         logger.LogDebug("birthRequest: {@birthRequest}", birthRequest);
@@ -68,7 +35,7 @@ public class PersonCommandHandler : IPersonCommandHandler
         return person;
     }
 
-    public Person RecordDeath(RecordDeathRequestModel deathRequest)
+    public override Person RecordDeath(RecordDeathRequestModel deathRequest)
     {
         logger.LogInformation("Recording death");
         logger.LogDebug("deathRequest: {@deathRequest}", deathRequest);
@@ -93,7 +60,7 @@ public class PersonCommandHandler : IPersonCommandHandler
         return person;
     }
 
-    public Person UpdatePerson(UpdatePersonRequestModel personRequest)
+    public override Person UpdatePerson(UpdatePersonRequestModel personRequest)
     {
         logger.LogInformation("Updating person entity");
         logger.LogDebug("personRequest: {@personRequest}", personRequest);
@@ -109,7 +76,7 @@ public class PersonCommandHandler : IPersonCommandHandler
         person.BirthLocation = personRequest.BirthLocation;
         person.DeathDate = personRequest.DeathDate;
         person.DeathLocation = personRequest.DeathLocation;
-        
+
         context.SaveChanges();
 
         return person;

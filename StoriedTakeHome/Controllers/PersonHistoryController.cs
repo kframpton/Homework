@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using StoriedTakeHomeWebApi.Interfaces.Queries;
-using StoriedTakeHomeWebApi.ResponseModels;
+﻿using DataEntities.Contexts;
+using Microsoft.AspNetCore.Mvc;
+using ModuleManager.Services;
+using PeopleQueryHandler.Interfaces;
+using PeopleQueryHandler.Models;
 
 namespace StoriedTakeHomeWebApi.Controllers;
 
@@ -8,12 +10,16 @@ namespace StoriedTakeHomeWebApi.Controllers;
 [ApiController]
 public class PersonHistoryController : ControllerBase
 {
-    private readonly IPersonQueryHandler queryHandler;
+    private readonly IPeopleQueryHandlerConsole queryHandler;
     private readonly ILogger<PersonHistoryController> logger;
 
-    public PersonHistoryController(IPersonQueryHandler queryHandler, ILogger<PersonHistoryController> logger)
+    public PersonHistoryController(IModuleManagerService moduleManagerService, TardisContext tardisContext, IServiceProvider services, ILogger<PersonHistoryController> logger)
     {
-        this.queryHandler = queryHandler;
+        queryHandler = moduleManagerService.GetApi<IPeopleQueryHandlerConsole, PeopleQueryHandlerConsoleOptions>(o =>
+        {
+            o.Context = tardisContext;
+            o.Services = services;
+        });
         this.logger = logger;
     }
 

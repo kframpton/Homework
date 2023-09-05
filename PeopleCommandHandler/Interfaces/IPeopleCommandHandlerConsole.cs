@@ -1,9 +1,9 @@
 ﻿using DataEntities.Entities.Tardis;
-using StoriedTakeHomeWebApi.RequestModels;
+using ModuleSharedResources.Interfaces;
+using PeopleCommandHandler.Models;
 
-namespace StoriedTakeHomeWebApi.Interfaces.Commands;
-
-public interface IPersonCommandHandler
+namespace PeopleCommandHandler.Interfaces;
+public interface IPeopleCommandHandlerConsole : IManagedModule
 {
     Person AddPerson(AddPersonRequestModel personRequest);
     Person RecordBirth(RecordBirthRequestModel birthRequest);

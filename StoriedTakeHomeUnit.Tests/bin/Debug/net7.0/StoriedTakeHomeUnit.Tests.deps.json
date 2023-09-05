@@ -54,6 +54,14 @@
         }
       },
       "coverlet.collector/3.2.0": {},
+      "Framptonius.BasicExtensions/6.0.4": {
+        "runtime": {
+          "lib/net6.0/Framptonius.BasicExtensions.dll": {
+            "assemblyVersion": "6.0.4.0",
+            "fileVersion": "6.0.4.0"
+          }
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/7.0.10": {
         "dependencies": {
           "Microsoft.OpenApi": "1.4.3"
@@ -271,7 +279,7 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         }
       },
-      "Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0": {
+      "Microsoft.Extensions.Options.ConfigurationExtensions/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.0",
@@ -931,7 +939,7 @@
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.0.2",
           "Microsoft.Extensions.Configuration": "6.0.1",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "7.0.0",
           "Serilog": "2.12.0",
           "Serilog.Sinks.PeriodicBatching": "3.1.0",
           "System.Configuration.ConfigurationManager": "6.0.1"
@@ -1733,10 +1741,50 @@
           "DataEntities.dll": {}
         }
       },
+      "ModuleManagerService/1.0.0": {
+        "dependencies": {
+          "DataEntities": "1.0.0",
+          "Framptonius.BasicExtensions": "6.0.4",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "7.0.0",
+          "ModuleSharedResources": "1.0.0",
+          "Serilog.AspNetCore": "7.0.0"
+        },
+        "runtime": {
+          "ModuleManagerService.dll": {}
+        }
+      },
+      "ModuleSharedResources/1.0.0": {
+        "runtime": {
+          "ModuleSharedResources.dll": {}
+        }
+      },
+      "PeopleCommandHandler/1.0.0": {
+        "dependencies": {
+          "DataEntities": "1.0.0",
+          "ModuleSharedResources": "1.0.0"
+        },
+        "runtime": {
+          "PeopleCommandHandler.dll": {}
+        }
+      },
+      "PeopleQueryHandler/1.0.0": {
+        "dependencies": {
+          "DataEntities": "1.0.0",
+          "ModuleSharedResources": "1.0.0"
+        },
+        "runtime": {
+          "PeopleQueryHandler.dll": {}
+        }
+      },
       "StoriedTakeHomeWebApi/1.0.0": {
         "dependencies": {
           "DataEntities": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.10",
+          "ModuleManagerService": "1.0.0",
+          "PeopleCommandHandler": "1.0.0",
+          "PeopleQueryHandler": "1.0.0",
           "Serilog.AspNetCore": "7.0.0",
           "Serilog.Enrichers.Environment": "2.2.0",
           "Serilog.Enrichers.Thread": "3.1.0",
@@ -1779,6 +1827,13 @@
       "sha512": "sha512-xjY8xBigSeWIYs4I7DgUHqSNoGqnHi7Fv7/7RZD02rvZyG3hlsjnQKiVKVWKgr9kRKgmV+dEfu8KScvysiC0Wg==",
       "path": "coverlet.collector/3.2.0",
       "hashPath": "coverlet.collector.3.2.0.nupkg.sha512"
+    },
+    "Framptonius.BasicExtensions/6.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-upC7VXltNC9ycVVcMZlGT1mYByBLu//F1tmIV4Kv63af+6PhM50RfZfSQ1dyPcQq9gIHu33EYsgOi3KBN8opqA==",
+      "path": "framptonius.basicextensions/6.0.4",
+      "hashPath": "framptonius.basicextensions.6.0.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/7.0.10": {
       "type": "package",
@@ -1955,12 +2010,12 @@
       "path": "microsoft.extensions.options/7.0.0",
       "hashPath": "microsoft.extensions.options.7.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0": {
+    "Microsoft.Extensions.Options.ConfigurationExtensions/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bXWINbTn0vC0FYc9GaQTISbxhQLAMrvtbuvD9N6JelEaIS/Pr62wUCinrq5bf1WRBGczt1v4wDhxFtVFNcMdUQ==",
-      "path": "microsoft.extensions.options.configurationextensions/6.0.0",
-      "hashPath": "microsoft.extensions.options.configurationextensions.6.0.0.nupkg.sha512"
+      "sha512": "sha512-95UnxZkkFdXxF6vSrtJsMHCzkDeSMuUWGs2hDT54cX+U5eVajrCJ3qLyQRW+CtpTt5OJ8bmTvpQVHu1DLhH+cA==",
+      "path": "microsoft.extensions.options.configurationextensions/7.0.0",
+      "hashPath": "microsoft.extensions.options.configurationextensions.7.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/7.0.0": {
       "type": "package",
@@ -2901,6 +2956,26 @@
       "hashPath": "xunit.runner.visualstudio.2.4.5.nupkg.sha512"
     },
     "DataEntities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModuleManagerService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModuleSharedResources/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PeopleCommandHandler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PeopleQueryHandler/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

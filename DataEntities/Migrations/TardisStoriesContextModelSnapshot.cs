@@ -22,6 +22,26 @@ namespace DataEntities.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DataEntities.Entities.Tardis.Module", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(1024)");
+
+                    b.Property<double>("DefaultVersion")
+                        .HasColumnType("float");
+
+                    b.Property<double>("MinimumVersion")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("Modules");
+                });
+
             modelBuilder.Entity("DataEntities.Entities.Tardis.Person", b =>
                 {
                     b.Property<Guid>("Id")
@@ -99,17 +119,12 @@ namespace DataEntities.Migrations
             modelBuilder.Entity("DataEntities.Entities.Tardis.PersonHistory", b =>
                 {
                     b.HasOne("DataEntities.Entities.Tardis.Person", "Person")
-                        .WithMany("History")
+                        .WithMany()
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Person");
-                });
-
-            modelBuilder.Entity("DataEntities.Entities.Tardis.Person", b =>
-                {
-                    b.Navigation("History");
                 });
 #pragma warning restore 612, 618
         }

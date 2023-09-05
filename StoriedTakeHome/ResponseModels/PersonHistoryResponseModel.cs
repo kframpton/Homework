@@ -1,9 +1,9 @@
-﻿using DataEntities.Entities.Tardis;
+﻿//using DataEntities.Entities.Tardis;
 
-namespace StoriedTakeHomeWebApi.ResponseModels;
+//namespace StoriedTakeHomeWebApi.ResponseModels;
 
-public class PersonHistoryResponseModel : PersonHistory
-{
-    public PersonHistoryResponseModel() { }
-    public PersonHistoryResponseModel(PersonHistory history) : base(history) { }
-}
+//public class PersonHistoryResponseModel : PersonHistory
+//{
+//    public PersonHistoryResponseModel() { }
+//    public PersonHistoryResponseModel(PersonHistory history) : base(history) { }
+//}
