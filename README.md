@@ -1,7 +1,7 @@
 # Storied Take Home Assignment
 
 ### Running
-Can be run either in Visual Studio, or directly from published exe
+Can be run either in Visual Studio, or directly from Published\StoriedTakeHomeWebApi.exe
 
 ## Urls 
 - https://localhost:7096
